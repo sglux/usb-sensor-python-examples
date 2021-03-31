@@ -1,6 +1,10 @@
-# ## Example 1:
-
+## Example 1:
 This example reads a couple of sensor informations and a number of readings. All that is written do a CSV file on your desktop and displayed in the terminal as well.
+
+## Source code:
+find the [python source code](sensor-summary.py)
+
+## Demo output
 
 ```
 Reading data from sensor on port COM6 ...
