@@ -2,7 +2,12 @@
 This example reads a couple of sensor informations and a number of readings. All that is written do a CSV file on your desktop and displayed in the terminal as well.
 
 ## Source code:
-find the [python source code](sensor-summary.py)
+find the here [python source code](sensor-summary.py)
+
+Requirements:
+* Linux or Windows (7 and higher)
+* installed Python 3.8 or higher
+* installed Python packages serial, struct, time, minimalmodbus, tqdm
 
 ## Demo output
 
