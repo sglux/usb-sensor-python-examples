@@ -6,13 +6,10 @@ They employ the royalty free Modbus protocol to transmit measurement data and re
 The examples are valid for all [UV sensor probes from sglux](https://sglux.de/en/product-category/uv-sensors/) with the option "USB output" such as (for example):
 
 <div class="row" >
-  <div class="column">
-    <img src="https://sglux.de/data-matrix/uploads/2015/11/sglux_uv-surface_UVI.jpg" height=120 alt="UV surface" style="width:100%; padding:5px">
-  </div>
-  <div class="column">
+  <div class="column"><img src="https://sglux.de/data-matrix/uploads/2015/11/sglux_uv-surface_UVI.jpg" height=120 alt="UV surface" style="width:100%; padding:5px">
+  </div>&nbsp;&nbsp;<div class="column">
     <img src="https://sglux.de/data-matrix/uploads/2015/06/sglux-uv-cosine-300x300.jpg" height=120 alt="UV cosine" style="width:100%; padding:5px">
-  </div>
-  <div class="column">
+  </div>&nbsp;&nbsp;<div class="column">
     <img src="https://sglux.de/data-matrix/uploads/2015/06/sglux-uv-air-300x300.jpg" height=120 alt="UV air" style="width:100%; padding:5px">
   </div>
 </div>
