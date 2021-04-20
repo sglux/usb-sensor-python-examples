@@ -17,3 +17,7 @@ This example reads a couple of sensor informations and a number of readings. All
 
 Please visit the subfolder [/example-1-sensor-summary](/example-1-sensor-summary) for code and demo outoput.
 
+## Issues
+If you discover an issue or somthing does not work as expected please first start a [discussion](https://github.com/sglux/usb-sensor-python-examples/discussions) before opening an issue ticket (as these are reserved for bugs not support ;-)
+
+Thank you!
