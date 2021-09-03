@@ -7,9 +7,9 @@ The examples are valid for all [UV sensor probes from sglux](https://sglux.de/en
 
 Examples are: UV surface, UV cosine and UV air probes.
 <p>
-<img src="https://sglux.de/data-matrix/uploads/2015/11/sglux_uv-surface_UVI.jpg" height=120 alt="UV surface" style="width:100%; padding:5px">&nbsp;&nbsp;
-<img src="https://sglux.de/data-matrix/uploads/2015/06/sglux-uv-cosine-300x300.jpg" height=120 alt="UV cosine" style="width:100%; padding:5px">&nbsp;&nbsp;
-<img src="https://sglux.de/data-matrix/uploads/2015/06/sglux-uv-air-300x300.jpg" height=120 alt="UV air" style="width:100%; padding:5px">
+<img src="https://sglux.de/data-matrix/uploads/2015/11/sglux_uv-surface_UVI.jpg" height=120 alt="UV surface" style="padding:5px">&nbsp;&nbsp;
+<img src="https://sglux.de/data-matrix/uploads/2015/06/sglux-uv-cosine-300x300.jpg" height=120 alt="UV cosine" style="padding:5px">&nbsp;&nbsp;
+<img src="https://sglux.de/data-matrix/uploads/2015/06/sglux-uv-air-300x300.jpg" height=120 alt="UV air" style="padding:5px">
 </p>
 
 ## Example 1:
