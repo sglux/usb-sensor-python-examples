@@ -1,2 +1,3 @@
 *.pdf
 *.log
+/sglux_digiprobe/__pycache__/*.pyc
