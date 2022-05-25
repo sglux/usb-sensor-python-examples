@@ -14,13 +14,19 @@ Examples of such sensors are: UV surface, UV cosine and UV air probes.
 
 ## How to run
 Please download the latest code from [ZIP](https://github.com/sglux/usb-sensor-python-examples/archive/refs/heads/main.zip) oder clone the repository.
-Extract to a folder of your choice. Then change you shell to that folder, no matter if you are on Windows (CMD or powershell) or Linux.
-Start the individual examples by typing **python example-1-sensor-summary.py** and so on.
 
+Extract to a folder of your choice. Then locate your shell to that folder, no matter if you are on Windows (CMD or powershell) or Linux (bash or whatever shell you prefer).
 
-## Example 1:
-This example reads a couple of sensor informations and a number of readings.
-All that is written do a CSV file on your desktop and displayed in the terminal as well.
+Check or install the required packages, for instance by calling ```pip install -r requirements.txt``` once.
+
+Start the individual examples by typing ```python example-1-sensor-summary.py``` and so on.
+
+## Example 1: Read parameters and some data
+This example reads parameters and captures 100 consecutive readings from the first sglux USB sensor detected on the system (further sensors are ignored).
+The gathered data is written do a CSV file (placed in the current folder) displayed in the terminal as well.
+
+Start it by typing ```python example-1-sensor-summary.py```
+
 [Click here](https://github.com/sglux/usb-sensor-python-examples/blob/main/example-1-sensor-summary.md) for further details.
 
 ## Issues

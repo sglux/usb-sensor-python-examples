@@ -1,13 +1,10 @@
-## Example 1:
+## Example 1: Read parameters and some data
 This example reads a couple of sensor informations and a number of readings. All that is written do a CSV file on your desktop and displayed in the terminal as well.
-
-## Source code:
-find the here [python source code](sensor-summary.py)
 
 Requirements:
 * Linux or Windows (7 and higher)
 * installed Python 3.8 or higher
-* installed Python packages serial, struct, time, minimalmodbus, tqdm
+* installed Python packages according to ```requirements.txt```
 
 ## Demo output
 
@@ -68,8 +65,5 @@ cycle;status;mstime;raw-value;irradiance1;irradiance2;irradiance3;irradiance4;ir
 1088;1;82168;-10151;-10123.0;-1.0;-1.0;-1.0;-1.0;24.5;0
 1089;1;82244;-3103;-3075.0;-1.0;-1.0;-1.0;-1.0;24.5;0
 
-
-D:\REPOS\sglux-github\usb-sensor-python-examples>
 ```
 
-> 
