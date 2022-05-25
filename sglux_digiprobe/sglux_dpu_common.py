@@ -1,6 +1,41 @@
 #!/usr/bin/env python3
 
-import serial
+from asyncio.windows_events import NULL
+import serial.tools.list_ports
+import minimalmodbus
+
+# ----------------------------------------------------------------------
+# Find serial ports that match the correct PID:VID pair
+def get_myport():
+    myport =''
+    for port in serial.tools.list_ports.comports():
+        if (port.vid == 0x0403 and port.pid == 0x6015):
+            myport = str(port).split(" ")[0]
+    return myport
+
+# use simplified form for USB because all parameters are locked
+def open_usb(port, timeout):
+    usb = open_port(port=port, id=1, mode='rtu', baud=115200, bytesize=8, parity=serial.PARITY_EVEN, stop=1, timeout=timeout)
+    return usb
+
+# use extended form for RS485, enabling some checks later
+def open_rs485(port, id, mode, baud, bytesize, parity, stop, timeout):
+    rs485 = open_port(port, id, mode, baud, bytesize, parity, stop, timeout)
+    return rs485
+
+# ----------------------------------------------------------------------
+# Open serial port and configure it
+def open_port(port,id,mode,baud,bytesize,parity,stop,timeout):
+    try:
+        opened = minimalmodbus.Instrument(port, id, mode)
+    except:
+        pass        
+    opened.serial.baudrate   = baud
+    opened.serial.bytesize   = bytesize
+    opened.serial.parity     = parity
+    opened.serial.stopbits   = stop
+    opened.serial.timeout    = timeout
+    return opened
 
 def lsprint(text,outfile):
     print(text)
@@ -18,14 +53,5 @@ def verfint(vint):
 def formh4(vhex):
     return "0x{:04x}".format(vhex)
 
-# ----------------------------------------------------------------------
-# Open serial port and configure it correctly for 8E1 at 115200 Baud
-def get_myport():
-    myport =''
-    for port in serial.tools.list_ports.comports():
-        if (port.vid == 0x0403 and port.pid == 0x6015): #FTDI: VID:PID=0403:6015
-            myport = str(port).split(" ")[0]
-    return myport
-
 if __name__ == '__main__':
-    print('nothing here. This is to be used as import')
+    print('This script is intended to be imported in other python programs.\n\rIt does nothing by intention if started directly.')

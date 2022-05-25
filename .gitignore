@@ -1,3 +1,17 @@
+# system specific
 *.pdf
 *.log
-/sglux_digiprobe/__pycache__/*.pyc
+Thumbs.db
+
+# editor specific
+.vscode/
+*.code-workspace
+
+# python specific
+__pycache__/
+*.spec
+
+# project specific
+.venv/
+build/
+dist/

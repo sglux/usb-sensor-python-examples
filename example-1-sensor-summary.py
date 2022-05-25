@@ -4,32 +4,24 @@
 # sglux GmbH - digiprobe USB - ModBus python demonstration
 # Author: Stefan Langer
 
-from distutils.errors import DistutilsGetoptError
-import serial
 import struct
-import string
-from time import sleep
-import minimalmodbus
-from tqdm import tqdm
 import serial.tools.list_ports
+from time import sleep, gmtime, strftime
+from tqdm import tqdm
 
 from sglux_digiprobe import sglux_dpu_common
 
 def main(komport,fname,samples):
     # ----------------------------------------------------------------------
     # Open serial port and configure it correctly for 8E1 at 115200 Baud
-    digiprobe = minimalmodbus.Instrument(komport, 1, mode='rtu')
-    digiprobe.serial.baudrate   = 115200
-    digiprobe.serial.bytesize   = 8
-    digiprobe.serial.parity     = serial.PARITY_EVEN
-    digiprobe.serial.stopbits   = 1
-    digiprobe.serial.timeout    = 0.2
+    digiprobe = sglux_dpu_common.open_usb(port=komport, timeout=0.2)
 
-    name = fname+'-sn'+str(digiprobe.read_long(104, signed=False))+".log"
+    # Define filename for Output, contains serial number and current time in filename
+    name = fname+'-sn'+str(digiprobe.read_long(104, signed=False))+strftime("_%H-%M-%S", gmtime())+".log"
     f = open(name,'w')
+
     # ----------------------------------------------------------------------
     # print sensor information
-    
     sglux_dpu_common.lsprint('------------------------------------------------- DEVICE INFO --', f)
     sglux_dpu_common.lsprint("Vendor Name     : " + digiprobe.read_string(110, number_of_registers=8),f)
     product_type = str(digiprobe.read_string(118, number_of_registers=8))
@@ -130,7 +122,7 @@ def main(komport,fname,samples):
             cycle_last = regs[2]
         
         if (missed==0):
-            print('\033[32mNo missing samples, perfect!\033[0m')
+            print('\033[32mNo missing or double samples, perfect!\033[0m')
         else:
             print("\033[91mThis time we missed",missed,"cycles - sample loss is {:.1f} %!".format(missed/(samples+missed)*100),"\033[0m")
 
@@ -154,6 +146,6 @@ if __name__ == '__main__':
         outf=main(komport,fname,100)
         # list the CSV content
         print('\r\nWhat data did have been recorded as CSV:')
-        print('\033[34m')
+        print('\033[36m')
         with open(outf,'r') as fin:
             print(fin.read())
